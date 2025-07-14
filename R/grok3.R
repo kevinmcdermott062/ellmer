@@ -98,7 +98,7 @@ Grok3Client <- R6Class("Grok3Client",
 chat_grok3 <- function(prompt, model = "grok-3", max_tokens = 1000, api_key = NULL) {
   client <- Grok3Client$new(api_key = api_key, model = model)
   response <- client$chat_completion(prompt, max_tokens = max_tokens, stream = FALSE)
-  response$choices[[1]]$message$content
+  cat(response$choices[[1]]$message$content, "\n")
 }
 
 
